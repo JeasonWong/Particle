@@ -46,6 +46,26 @@ mParticleView.setOnParticleAnimListener(new ParticleView.ParticleAnimListener() 
 });
 ```
 
+## Import
+
+Step 1. Add it in your project's build.gradle at the end of repositories:
+
+```gradle
+repositories {
+    maven {
+        url 'https://dl.bintray.com/wangyuwei/maven'
+    }
+}
+```
+
+Step 2. Add the dependency:
+
+```gradle
+dependencies {
+  compile 'me.wangyuwei:ParticleView:1.0.0'
+}
+```
+
 ### About Me
 
 [Weibo](http://weibo.com/WongYuwei)
