@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <me.wangyuwei.particleview.ParticleView
+            android:id="@+id/pv_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#0867AB"
+            pv:pv_host_text="Linked"
+            pv:pv_particle_text="in" />
+
+        <me.wangyuwei.particleview.ParticleView
+            android:id="@+id/pv_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFF"
+            pv:pv_host_text="WEEX"
+            pv:pv_particle_text="2.0"
+            pv:pv_particle_text_size="12sp"
+            pv:pv_text_color="#03A9F4"
+            pv:pv_background_color="#FFF"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <me.wangyuwei.particleview.ParticleView
+            android:id="@+id/pv_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#757575"
+            pv:pv_host_text="OpenGL"
+            pv:pv_particle_text="ES"
+            pv:pv_text_color="#BBDEFB"
+            pv:pv_background_color="#757575"/>
+
+        <me.wangyuwei.particleview.ParticleView
+            android:id="@+id/pv_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#2E2E2E"
+            pv:pv_background_color="#2E2E2E"
+            pv:pv_host_text="github"
+            pv:pv_particle_text=".com"
+            pv:pv_particle_text_size="14sp"
+            pv:pv_text_color="#FFF" />
+
+    </LinearLayout>
+
+</LinearLayout>
