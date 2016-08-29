@@ -5,6 +5,9 @@ It's a cool animation which can use in splash or anywhere else.
 
 ![Markdown](https://raw.githubusercontent.com/jeasonwong/Particle/master/screenshots/particle.gif)
 
+## Article
+[手摸手教你用Canvas实现简单粒子动画](http://www.wangyuwei.me/2016/08/29/%E6%89%8B%E6%91%B8%E6%89%8B%E6%95%99%E4%BD%A0%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%B2%92%E5%AD%90%E5%8A%A8%E7%94%BB/)
+
 ## Attributes
 
 |name|format|description|中文解释
