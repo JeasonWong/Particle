@@ -288,8 +288,13 @@ public class ParticleView extends View {
 
     }
 
-    public void startAnim(){
-        startParticleAnim();
+    public void startAnim() {
+        post(new Runnable() {
+            @Override
+            public void run() {
+                startParticleAnim();
+            }
+        });
     }
 
     private abstract class AnimListener implements Animator.AnimatorListener {

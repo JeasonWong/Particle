@@ -65,7 +65,7 @@ Step 2. Add the dependency:
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:ParticleView:1.0.0'
+  compile 'me.wangyuwei:ParticleView:1.0.1'
 }
 ```
 

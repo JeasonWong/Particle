@@ -19,9 +19,16 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url 'https://dl.bintray.com/wangyuwei/maven'
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.0.1'
-    compile project(':ParticleView')
+//    compile project(':ParticleView')
+    compile 'me.wangyuwei:ParticleView:1.0.1'
 }
