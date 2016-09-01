@@ -37,6 +37,10 @@ public class ParticleView extends View {
     private final int DEFAULT_MAX_TEXT_SIZE = sp2px(80);
     private final int DEFAULT_MIN_TEXT_SIZE = sp2px(30);
 
+    public final int DEFAULT_TEXT_ANIM_TIME = 1000;
+    public final int DEFAULT_SPREAD_ANIM_TIME = 300;
+    public final int DEFAULT_HOST_TEXT_ANIM_TIME = 800;
+
     private Paint mHostTextPaint;
     private Paint mParticleTextPaint;
     private Paint mCirclePaint;
@@ -70,6 +74,13 @@ public class ParticleView extends View {
     //Host文字的x坐标
     private float mHostTextX;
 
+    //Text anim time in milliseconds
+    private int mTextAnimTime;
+    //Spread anim time in milliseconds
+    private int mSpreadAnimTime;
+    //HostText anim time in milliseconds
+    private int mHostTextAnimTime;
+
     private PointF mStartMaxP, mEndMaxP;
     private PointF mStartMinP, mEndMinP;
 
@@ -94,13 +105,15 @@ public class ParticleView extends View {
         mHostBgPaint.setAntiAlias(true);
         mHostBgPaint.setTextSize(DEFAULT_MIN_TEXT_SIZE);
 
-        TypedArray typeArray = getContext().obtainStyledAttributes(attrs,
-                R.styleable.ParticleView);
+        TypedArray typeArray = getContext().obtainStyledAttributes(attrs, R.styleable.ParticleView);
         mHostText = null == typeArray.getString(R.styleable.ParticleView_pv_host_text) ? "" : typeArray.getString(R.styleable.ParticleView_pv_host_text);
         mParticleText = null == typeArray.getString(R.styleable.ParticleView_pv_particle_text) ? "" : typeArray.getString(R.styleable.ParticleView_pv_particle_text);
         mParticleTextSize = (int) typeArray.getDimension(R.styleable.ParticleView_pv_particle_text_size, DEFAULT_MIN_TEXT_SIZE);
         mBgColor = typeArray.getColor(R.styleable.ParticleView_pv_background_color, 0xFF0867AB);
         mParticleColor = typeArray.getColor(R.styleable.ParticleView_pv_text_color, 0xFFCEF4FD);
+        mTextAnimTime = typeArray.getInt(R.styleable.ParticleView_pv_text_anim_time, DEFAULT_TEXT_ANIM_TIME);
+        mSpreadAnimTime = typeArray.getInt(R.styleable.ParticleView_pv_text_anim_time, DEFAULT_SPREAD_ANIM_TIME);
+        mHostTextAnimTime = typeArray.getInt(R.styleable.ParticleView_pv_text_anim_time, DEFAULT_HOST_TEXT_ANIM_TIME);
         typeArray.recycle();
 
         mParticleTextPaint.setTextSize(mParticleTextSize);
@@ -179,7 +192,7 @@ public class ParticleView extends View {
         Collection<Animator> animList = new ArrayList<>();
 
         ValueAnimator textAnim = ValueAnimator.ofInt(DEFAULT_MAX_TEXT_SIZE, mParticleTextSize);
-        textAnim.setDuration(800);
+        textAnim.setDuration((int)(mTextAnimTime * 0.8));
         textAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -194,7 +207,7 @@ public class ParticleView extends View {
                 final int tempI = i;
                 final int tempJ = j;
                 ValueAnimator animator = ValueAnimator.ofObject(new LineEvaluator(), mParticles[i][j], mMinParticles[i][j]);
-                animator.setDuration(1000 + 20 * i + 30 * j);
+                animator.setDuration(mTextAnimTime + 20 * i + 30 * j);
                 animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
                     public void onAnimationUpdate(ValueAnimator animation) {
@@ -223,7 +236,7 @@ public class ParticleView extends View {
 
     private void startSpreadAnim() {
         ValueAnimator animator = ValueAnimator.ofFloat(0, getTextWidth(mParticleText, mParticleTextPaint) / 2 + dip2px(4));
-        animator.setDuration(300);
+        animator.setDuration(mSpreadAnimTime);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -275,7 +288,7 @@ public class ParticleView extends View {
 
         AnimatorSet set = new AnimatorSet();
         set.playTogether(animList);
-        set.setDuration(800);
+        set.setDuration(mHostTextAnimTime);
         set.addListener(new AnimListener() {
             @Override
             public void onAnimationEnd(Animator animation) {
