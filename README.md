@@ -17,6 +17,9 @@ It's a cool animation which can use in splash or anywhere else.
 | pv_particle_text_size | dimension |set particle text size|设置粒子上文案的大小
 | pv_text_color | color |set host text color|设置左边主文案颜色
 |pv_background_color|color|set background color|设置背景颜色
+| pv_text_anim_time | integer |set particle text duration|设置粒子上文案的运动时间
+| pv_spread_anim_time | integer |set particle text spread duration|设置粒子上文案的伸展时间
+|pv_host_text_anim_time|integer|set host text displacement duration|设置左边主文案的位移时间
 
 ## Usage
 #### Define your banner under your xml :
@@ -65,7 +68,7 @@ Step 2. Add the dependency:
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:ParticleView:1.0.1'
+  compile 'me.wangyuwei:ParticleView:1.0.2'
 }
 ```
 
