@@ -17,7 +17,10 @@
             android:layout_weight="1"
             android:background="#0867AB"
             pv:pv_host_text="Linked"
-            pv:pv_particle_text="in" />
+            pv:pv_particle_text="in"
+            pv:pv_text_anim_time="3000"
+            pv:pv_spread_anim_time="2000"
+            pv:pv_host_text_anim_time="3000" />
 
         <me.wangyuwei.particleview.ParticleView
             android:id="@+id/pv_2"
@@ -29,7 +32,10 @@
             pv:pv_particle_text="2.0"
             pv:pv_particle_text_size="12sp"
             pv:pv_text_color="#03A9F4"
-            pv:pv_background_color="#FFF"/>
+            pv:pv_background_color="#FFF"
+            pv:pv_text_anim_time="500"
+            pv:pv_spread_anim_time="800"
+            pv:pv_host_text_anim_time="500"/>
 
     </LinearLayout>
 
