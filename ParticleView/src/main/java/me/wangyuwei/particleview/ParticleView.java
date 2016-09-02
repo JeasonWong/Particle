@@ -192,7 +192,7 @@ public class ParticleView extends View {
         Collection<Animator> animList = new ArrayList<>();
 
         ValueAnimator textAnim = ValueAnimator.ofInt(DEFAULT_MAX_TEXT_SIZE, mParticleTextSize);
-        textAnim.setDuration((int)(mTextAnimTime * 0.8));
+        textAnim.setDuration((int) (mTextAnimTime * 0.8f));
         textAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -207,7 +207,7 @@ public class ParticleView extends View {
                 final int tempI = i;
                 final int tempJ = j;
                 ValueAnimator animator = ValueAnimator.ofObject(new LineEvaluator(), mParticles[i][j], mMinParticles[i][j]);
-                animator.setDuration(mTextAnimTime + 20 * i + 30 * j);
+                animator.setDuration(mTextAnimTime + ((int) (mTextAnimTime * 0.02f)) * i + ((int) (mTextAnimTime * 0.03f)) * j);
                 animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
                     public void onAnimationUpdate(ValueAnimator animation) {
