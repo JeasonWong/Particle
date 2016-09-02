@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'me.wangyuwei' // Change this to match your package name
-version = '1.0.2' // Change this to match your version number
+version = '1.0.3' // Change this to match your version number
 
 android {
     compileSdkVersion 23
@@ -61,7 +61,7 @@ bintray {
         desc = "It's a cool animation which can use in splash or anywhere else."
 
         version {
-            name = '1.0.2'
+            name = '1.0.3'
             desc = 'It is a cool animation which can use in splash or anywhere else.'
             vcsTag = 'android, animation, view, splash'
         }
