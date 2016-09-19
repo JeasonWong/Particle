@@ -13,6 +13,7 @@ It's a cool animation which can use in splash or anywhere else.
 |name|format|description|中文解释
 |:---:|:---:|:---:|:---:|
 | pv_host_text | string |set left host text|设置左边主文案
+| pv_host_text_size | dimension |set host text size|设置主文案的大小
 | pv_particle_text | string |set right particle text|设置右边粒子上的文案
 | pv_particle_text_size | dimension |set particle text size|设置粒子上文案的大小
 | pv_text_color | color |set host text color|设置左边主文案颜色
@@ -30,9 +31,13 @@ It's a cool animation which can use in splash or anywhere else.
     android:layout_height="match_parent"
     pv:pv_background_color="#2E2E2E"
     pv:pv_host_text="github"
+    pv:pv_host_text_size="14sp"
     pv:pv_particle_text=".com"
     pv:pv_particle_text_size="14sp"
-    pv:pv_text_color="#FFF" />
+    pv:pv_text_color="#FFF"
+    pv:pv_text_anim_time="3000"
+    pv:pv_spread_anim_time="2000"
+    pv:pv_host_text_anim_time="3000" />
 ```
 
 #### Start animation :
@@ -68,7 +73,7 @@ Step 2. Add the dependency:
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:ParticleView:1.0.3'
+  compile 'me.wangyuwei:ParticleView:1.0.4'
 }
 ```
 

@@ -52,6 +52,8 @@
             android:background="#757575"
             pv:pv_host_text="OpenGL"
             pv:pv_particle_text="ES"
+            pv:pv_host_text_size="14sp"
+            pv:pv_particle_text_size="30sp"
             pv:pv_text_color="#BBDEFB"
             pv:pv_background_color="#757575"/>
 

@@ -3,6 +3,7 @@
 
     <declare-styleable name="ParticleView">
         <attr name="pv_host_text" format="string"></attr>
+        <attr name="pv_host_text_size" format="dimension"></attr>
         <attr name="pv_particle_text" format="string"></attr>
         <attr name="pv_particle_text_size" format="dimension"></attr>
         <attr name="pv_text_color" format="color"></attr>

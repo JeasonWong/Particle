@@ -94,27 +94,29 @@ public class ParticleView extends View {
     }
 
     private void initView(AttributeSet attrs) {
-        mHostTextPaint = new Paint();
-        mHostTextPaint.setAntiAlias(true);
-        mHostTextPaint.setTextSize(DEFAULT_MIN_TEXT_SIZE);
-        mParticleTextPaint = new Paint();
-        mParticleTextPaint.setAntiAlias(true);
-        mCirclePaint = new Paint();
-        mCirclePaint.setAntiAlias(true);
-        mHostBgPaint = new Paint();
-        mHostBgPaint.setAntiAlias(true);
-        mHostBgPaint.setTextSize(DEFAULT_MIN_TEXT_SIZE);
 
         TypedArray typeArray = getContext().obtainStyledAttributes(attrs, R.styleable.ParticleView);
         mHostText = null == typeArray.getString(R.styleable.ParticleView_pv_host_text) ? "" : typeArray.getString(R.styleable.ParticleView_pv_host_text);
         mParticleText = null == typeArray.getString(R.styleable.ParticleView_pv_particle_text) ? "" : typeArray.getString(R.styleable.ParticleView_pv_particle_text);
         mParticleTextSize = (int) typeArray.getDimension(R.styleable.ParticleView_pv_particle_text_size, DEFAULT_MIN_TEXT_SIZE);
+        int hostTextSize = (int) typeArray.getDimension(R.styleable.ParticleView_pv_host_text_size, DEFAULT_MIN_TEXT_SIZE);
         mBgColor = typeArray.getColor(R.styleable.ParticleView_pv_background_color, 0xFF0867AB);
         mParticleColor = typeArray.getColor(R.styleable.ParticleView_pv_text_color, 0xFFCEF4FD);
         mTextAnimTime = typeArray.getInt(R.styleable.ParticleView_pv_text_anim_time, DEFAULT_TEXT_ANIM_TIME);
         mSpreadAnimTime = typeArray.getInt(R.styleable.ParticleView_pv_text_anim_time, DEFAULT_SPREAD_ANIM_TIME);
         mHostTextAnimTime = typeArray.getInt(R.styleable.ParticleView_pv_text_anim_time, DEFAULT_HOST_TEXT_ANIM_TIME);
         typeArray.recycle();
+
+        mHostTextPaint = new Paint();
+        mHostTextPaint.setAntiAlias(true);
+        mHostTextPaint.setTextSize(hostTextSize);
+        mParticleTextPaint = new Paint();
+        mParticleTextPaint.setAntiAlias(true);
+        mCirclePaint = new Paint();
+        mCirclePaint.setAntiAlias(true);
+        mHostBgPaint = new Paint();
+        mHostBgPaint.setAntiAlias(true);
+        mHostBgPaint.setTextSize(hostTextSize);
 
         mParticleTextPaint.setTextSize(mParticleTextSize);
         mCirclePaint.setTextSize(mParticleTextSize);
